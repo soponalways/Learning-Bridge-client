@@ -149,8 +149,12 @@ const Navbar = ({ className }: Navbar5Props) => {
             </NavigationMenuList>
           </NavigationMenu>
           <div className="hidden items-center gap-4 lg:flex">
-            <Button variant="outline">Sign in</Button>
-            <Button>Sign up</Button>
+            <Button variant="outline" asChild>
+              <Link href={'/sign-in'}>Sign in</Link>
+            </Button>
+            <Button asChild>
+              <Link href={'/sign-up'}>Sign up</Link>
+            </Button>
           </div>
           <Sheet>
             <SheetTrigger asChild className="lg:hidden">
@@ -207,19 +211,19 @@ const Navbar = ({ className }: Navbar5Props) => {
                   </AccordionItem>
                 </Accordion>
                 <div className="flex flex-col gap-6">
-                  <a href="#" className="font-medium">
-                    Templates
-                  </a>
-                  <a href="#" className="font-medium">
-                    Blog
-                  </a>
-                  <a href="#" className="font-medium">
-                    Pricing
-                  </a>
+                  <Link href="/tutors" className="font-medium">
+                    Tutors
+                  </Link>
+                  <Link href="/resources" className="font-medium">
+                    Resources
+                  </Link>
+                  <Link href="/contact" className="font-medium">
+                    Contact
+                  </Link>
                 </div>
                 <div className="mt-6 flex flex-col gap-4">
                   <Button variant="outline">Sign in</Button>
-                  <Button>Start for free</Button>
+                  <Button>Sign up</Button>
                 </div>
               </div>
             </SheetContent>
