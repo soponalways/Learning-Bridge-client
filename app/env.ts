@@ -16,6 +16,7 @@ export const env = createEnv({
      */
     client: {
         NEXT_PUBLIC_SERVER_URL: z.string(),
+        NEXT_PUBLIC_FRONTEND_URL: z.string(),
     },
     /*
      * Due to how Next.js bundles environment variables on Edge and Client,
@@ -26,5 +27,6 @@ export const env = createEnv({
     runtimeEnv: {
         SERVER_URL: process.env.SERVER_URL,
         NEXT_PUBLIC_SERVER_URL: process.env.NEXT_PUBLIC_SERVER_URL,
+        NEXT_PUBLIC_FRONTEND_URL: process.env.NEXT_PUBLIC_FRONTEND_URL,
     },
 });
