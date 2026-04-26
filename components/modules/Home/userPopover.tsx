@@ -15,7 +15,6 @@ import React from 'react'
 
 export default function UserPopover() {
     const session = authClient.useSession();
-    console.log("Session in UserPopover:", session);
     if (session.isPending === true) {
         return <Spinner />
     }
@@ -35,7 +34,7 @@ export default function UserPopover() {
         <>
             <Popover>
                 <PopoverTrigger asChild>
-                    <Avatar>
+                    <Avatar className='cursor-pointer'>
                         <AvatarImage src={session.data.user.image || 'https://github.com/shadcn.png'} />
                         <AvatarFallback>SR</AvatarFallback>
                     </Avatar>

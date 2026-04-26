@@ -8,6 +8,7 @@ export const env = createEnv({
      */
     server: {
         SERVER_URL: z.url(),
+        AUTH_URL: z.url(),
     },
     /*
      * Environment variables available on the client (and server).
@@ -28,5 +29,7 @@ export const env = createEnv({
         SERVER_URL: process.env.SERVER_URL,
         NEXT_PUBLIC_SERVER_URL: process.env.NEXT_PUBLIC_SERVER_URL,
         NEXT_PUBLIC_FRONTEND_URL: process.env.NEXT_PUBLIC_FRONTEND_URL,
+        AUTH_URL: process.env.AUTH_URL,
+
     },
 });

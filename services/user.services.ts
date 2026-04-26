@@ -5,7 +5,7 @@ const userService = {
     getSession: async () => {
         try {
             const cookieStore = await cookies();
-            const authUrl = env.SERVER_URL + "/get-session";
+            const authUrl = env.AUTH_URL + "/get-session";
             const res = await fetch(authUrl, {
                 headers: {
                     Cookie: cookieStore.toString()
@@ -16,7 +16,7 @@ const userService = {
                 return { data: null, error: new Error("Failed to fetch session data") }
             }
             const sessionData = await res.json();
-            console.log("Session Data:", sessionData);
+            // console.log("Session Data:", sessionData);
             if (!sessionData) {
                 return {
                     data: null,
@@ -25,7 +25,7 @@ const userService = {
             }
             return { data: sessionData, error: null }
         } catch (error) {
-            console.log(error);
+            console.log(error, "Error on catch");
             return { data: null, error: error as Error }
         }
     }
