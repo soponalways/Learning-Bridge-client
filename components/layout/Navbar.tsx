@@ -28,6 +28,7 @@ import {
 import { cn } from "@/lib/utils";
 import Link from "next/link";
 import Image from "next/image";
+import UserPopover from "../modules/Home/userPopover";
 
 interface Navbar5Props {
   className?: string;
@@ -149,12 +150,7 @@ const Navbar = ({ className }: Navbar5Props) => {
             </NavigationMenuList>
           </NavigationMenu>
           <div className="hidden items-center gap-4 lg:flex">
-            <Button variant="outline" asChild>
-              <Link href={'/sign-in'}>Sign in</Link>
-            </Button>
-            <Button asChild>
-              <Link href={'/sign-up'}>Sign up</Link>
-            </Button>
+            <UserPopover />
           </div>
           <Sheet>
             <SheetTrigger asChild className="lg:hidden">
@@ -222,8 +218,7 @@ const Navbar = ({ className }: Navbar5Props) => {
                   </Link>
                 </div>
                 <div className="mt-6 flex flex-col gap-4">
-                  <Button variant="outline">Sign in</Button>
-                  <Button>Sign up</Button>
+                  <UserPopover />
                 </div>
               </div>
             </SheetContent>
